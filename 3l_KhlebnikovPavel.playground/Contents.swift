@@ -1,14 +1,22 @@
 import UIKit
 import Foundation
 
+//свой print для более человеческого вывода
+//TODO доработать вывод raw для перечислений
 public func print(_ items: Any..., separator: String = " ", terminator: String = "\n"){
     var outArray = [String] ()
     
     for item in items {
-        outArray.append("\(item)")
+        let mirror = Mirror(reflecting: item)
+        for child in mirror.children  {
+            let key = child.label!
+            let value = child.value
+            outArray.append("\(key) -> \(value)")
+        }
+        outArray.append("----------------------")
     }
     
-    let output = items.map {"\($0)"}.joined(separator: separator)
+    let output = outArray.map {"\($0)"}.joined(separator: terminator)
     Swift.print(output)
 }
 
@@ -77,8 +85,13 @@ struct Car {
     
 }
 
-var oneCar = Car(type: .passanger, brand: "Honda", yearManufacture: 2000, trunkVolume: 1.5)
+var SportCar = Car(type: .passanger, brand: "Honda", yearManufacture: 2000, trunkVolume: 1.5)
+var TrunkCar = Car(type: .autotruck, brand: "Volvo", yearManufacture: 2010, trunkVolume: 15)
 
-oneCar.Open(target: .door)
+SportCar.Open(target: .door)
+SportCar.engineMode = .start
 
-print(oneCar)
+TrunkCar.Open(target: .trunk)
+
+print(SportCar)
+print(TrunkCar)
