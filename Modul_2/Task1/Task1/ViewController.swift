@@ -20,8 +20,6 @@ class ViewController: UIViewController {
         let vController = storyboard.instantiateViewController(identifier: "controllerHello")
         
         self.present(vController, animated: true, completion: nil)
-        
     }
-
 }
 
