@@ -13,6 +13,15 @@
 		FA8DC59E254430EB0004FC3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8DC59C254430EB0004FC3B /* Main.storyboard */; };
 		FA8DC5A0254430EB0004FC3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8DC59F254430EB0004FC3B /* Assets.xcassets */; };
 		FA8DC5A3254430EB0004FC3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8DC5A1254430EB0004FC3B /* LaunchScreen.storyboard */; };
+		FACF2E63254EA7490006973C /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2E62254EA7490006973C /* TableViewController.swift */; };
+		FACF2E67254EA9160006973C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2E66254EA9160006973C /* User.swift */; };
+		FACF2E6A254EA9340006973C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2E69254EA9340006973C /* Group.swift */; };
+		FACF2E6D254EB15A0006973C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2E6C254EB15A0006973C /* Utilities.swift */; };
+		FACF2E70254EB82F0006973C /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2E6F254EB82F0006973C /* TableViewCell.swift */; };
+		FACF2E73254EBF060006973C /* TableViewControllerGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2E72254EBF060006973C /* TableViewControllerGroup.swift */; };
+		FACF2E76254EC3360006973C /* TableViewCellGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2E75254EC3360006973C /* TableViewCellGroup.swift */; };
+		FACF2E81254ED1670006973C /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2E80254ED1670006973C /* CollectionViewController.swift */; };
+		FACF2E84254ED1C00006973C /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2E83254ED1C00006973C /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +33,15 @@
 		FA8DC59F254430EB0004FC3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA8DC5A2254430EB0004FC3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA8DC5A4254430EB0004FC3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FACF2E62254EA7490006973C /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		FACF2E66254EA9160006973C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FACF2E69254EA9340006973C /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		FACF2E6C254EB15A0006973C /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		FACF2E6F254EB82F0006973C /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		FACF2E72254EBF060006973C /* TableViewControllerGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerGroup.swift; sourceTree = "<group>"; };
+		FACF2E75254EC3360006973C /* TableViewCellGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellGroup.swift; sourceTree = "<group>"; };
+		FACF2E80254ED1670006973C /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		FACF2E83254ED1C00006973C /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +76,30 @@
 			children = (
 				FA8DC596254430EB0004FC3B /* AppDelegate.swift */,
 				FA8DC598254430EB0004FC3B /* SceneDelegate.swift */,
+				FACF2E62254EA7490006973C /* TableViewController.swift */,
+				FACF2E72254EBF060006973C /* TableViewControllerGroup.swift */,
+				FACF2E6C254EB15A0006973C /* Utilities.swift */,
+				FACF2E65254EA8E90006973C /* Model */,
 				FA8DC59A254430EB0004FC3B /* ViewController.swift */,
+				FACF2E6F254EB82F0006973C /* TableViewCell.swift */,
+				FACF2E75254EC3360006973C /* TableViewCellGroup.swift */,
+				FACF2E80254ED1670006973C /* CollectionViewController.swift */,
+				FACF2E83254ED1C00006973C /* CollectionViewCell.swift */,
 				FA8DC59C254430EB0004FC3B /* Main.storyboard */,
 				FA8DC59F254430EB0004FC3B /* Assets.xcassets */,
 				FA8DC5A1254430EB0004FC3B /* LaunchScreen.storyboard */,
 				FA8DC5A4254430EB0004FC3B /* Info.plist */,
 			);
 			path = Task1;
+			sourceTree = "<group>";
+		};
+		FACF2E65254EA8E90006973C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FACF2E66254EA9160006973C /* User.swift */,
+				FACF2E69254EA9340006973C /* Group.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +173,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8DC59B254430EB0004FC3B /* ViewController.swift in Sources */,
+				FACF2E70254EB82F0006973C /* TableViewCell.swift in Sources */,
+				FACF2E84254ED1C00006973C /* CollectionViewCell.swift in Sources */,
 				FA8DC597254430EB0004FC3B /* AppDelegate.swift in Sources */,
+				FACF2E6D254EB15A0006973C /* Utilities.swift in Sources */,
+				FACF2E73254EBF060006973C /* TableViewControllerGroup.swift in Sources */,
 				FA8DC599254430EB0004FC3B /* SceneDelegate.swift in Sources */,
+				FACF2E6A254EA9340006973C /* Group.swift in Sources */,
+				FACF2E67254EA9160006973C /* User.swift in Sources */,
+				FACF2E63254EA7490006973C /* TableViewController.swift in Sources */,
+				FACF2E76254EC3360006973C /* TableViewCellGroup.swift in Sources */,
+				FACF2E81254ED1670006973C /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
