@@ -1,17 +1,17 @@
 //
-//  TableViewController.swift
+//  TableViewControllerSearchGroup.swift
 //  Task1
 //
-//  Created by macbook on 01.11.2020.
+//  Created by macbook on 05.11.2020.
 //
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class TableViewControllerSearchGroup: UITableViewController {
 
-    let data = createUser()
+    @IBOutlet var table_2_3: UITableView!
     
-    @IBOutlet var table_1_2: UITableView!
+    var data = createGroup()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,35 +37,27 @@ class TableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell_1_1", for: indexPath) as! TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell_2_2", for: indexPath) as! TableViewCellSearchGroup
 
         cell.labelName.text = "\(self.data[indexPath.row])"
-        cell.imageUser.image = self.data[indexPath.row].avatar
-        
+        cell.imageGroup.image = self.data[indexPath.row].avatar
+
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        //при такой реализации открывается 2 экрана: 1й я как понимаю "стандартный"
-        //из-за наличия seque с пустым полем test user, второй - тот который пушим с
-        //переданным юзером. Вопрос как отказаться от первого показа экрана?
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vController = storyboard.instantiateViewController(identifier: "details") as! CollectionViewController
-        
-        vController.testUser = self.data[indexPath.row]
-        navigationController?.pushViewController(vController, animated: true)
-    
-    }
 
-    /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
-
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let editGroup = UITableViewRowAction(style: .normal, title: "вступить в группу") { [self] action, index in data.remove(at: indexPath.row); tableView.reloadData()}
+        
+        return [editGroup]
+    }
+    
     /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

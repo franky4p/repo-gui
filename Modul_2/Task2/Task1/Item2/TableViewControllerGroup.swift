@@ -11,7 +11,7 @@ class TableViewControllerGroup: UITableViewController {
 
     @IBOutlet var table_2_2: UITableView!
     
-    let data = createGroup()
+    var data = createGroup()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,14 +45,17 @@ class TableViewControllerGroup: UITableViewController {
         return cell
     }
     
-
-    /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let editGroup = UITableViewRowAction(style: .normal, title: "Выйти из группы") { [self] action, index in data.remove(at: indexPath.row); tableView.reloadData()}
+        
+        return [editGroup]
+    }
 
     /*
     // Override to support editing the table view.

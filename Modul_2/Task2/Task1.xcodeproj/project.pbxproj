@@ -22,6 +22,8 @@
 		FACF2E76254EC3360006973C /* TableViewCellGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2E75254EC3360006973C /* TableViewCellGroup.swift */; };
 		FACF2E81254ED1670006973C /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2E80254ED1670006973C /* CollectionViewController.swift */; };
 		FACF2E84254ED1C00006973C /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2E83254ED1C00006973C /* CollectionViewCell.swift */; };
+		FACF2E872553F07E0006973C /* TableViewControllerSearchGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2E862553F07E0006973C /* TableViewControllerSearchGroup.swift */; };
+		FACF2E8E2553F2BE0006973C /* TableViewCellSearchGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2E8D2553F2BE0006973C /* TableViewCellSearchGroup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		FACF2E75254EC3360006973C /* TableViewCellGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellGroup.swift; sourceTree = "<group>"; };
 		FACF2E80254ED1670006973C /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		FACF2E83254ED1C00006973C /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		FACF2E862553F07E0006973C /* TableViewControllerSearchGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerSearchGroup.swift; sourceTree = "<group>"; };
+		FACF2E8D2553F2BE0006973C /* TableViewCellSearchGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellSearchGroup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,15 +80,11 @@
 			children = (
 				FA8DC596254430EB0004FC3B /* AppDelegate.swift */,
 				FA8DC598254430EB0004FC3B /* SceneDelegate.swift */,
-				FACF2E62254EA7490006973C /* TableViewController.swift */,
-				FACF2E72254EBF060006973C /* TableViewControllerGroup.swift */,
+				FACF2E8B2553F1040006973C /* Item2 */,
+				FACF2E892553F0CC0006973C /* Item1 */,
 				FACF2E6C254EB15A0006973C /* Utilities.swift */,
 				FACF2E65254EA8E90006973C /* Model */,
 				FA8DC59A254430EB0004FC3B /* ViewController.swift */,
-				FACF2E6F254EB82F0006973C /* TableViewCell.swift */,
-				FACF2E75254EC3360006973C /* TableViewCellGroup.swift */,
-				FACF2E80254ED1670006973C /* CollectionViewController.swift */,
-				FACF2E83254ED1C00006973C /* CollectionViewCell.swift */,
 				FA8DC59C254430EB0004FC3B /* Main.storyboard */,
 				FA8DC59F254430EB0004FC3B /* Assets.xcassets */,
 				FA8DC5A1254430EB0004FC3B /* LaunchScreen.storyboard */,
@@ -100,6 +100,28 @@
 				FACF2E69254EA9340006973C /* Group.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FACF2E892553F0CC0006973C /* Item1 */ = {
+			isa = PBXGroup;
+			children = (
+				FACF2E83254ED1C00006973C /* CollectionViewCell.swift */,
+				FACF2E80254ED1670006973C /* CollectionViewController.swift */,
+				FACF2E6F254EB82F0006973C /* TableViewCell.swift */,
+				FACF2E62254EA7490006973C /* TableViewController.swift */,
+			);
+			path = Item1;
+			sourceTree = "<group>";
+		};
+		FACF2E8B2553F1040006973C /* Item2 */ = {
+			isa = PBXGroup;
+			children = (
+				FACF2E862553F07E0006973C /* TableViewControllerSearchGroup.swift */,
+				FACF2E75254EC3360006973C /* TableViewCellGroup.swift */,
+				FACF2E8D2553F2BE0006973C /* TableViewCellSearchGroup.swift */,
+				FACF2E72254EBF060006973C /* TableViewControllerGroup.swift */,
+			);
+			path = Item2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,10 +199,12 @@
 				FACF2E84254ED1C00006973C /* CollectionViewCell.swift in Sources */,
 				FA8DC597254430EB0004FC3B /* AppDelegate.swift in Sources */,
 				FACF2E6D254EB15A0006973C /* Utilities.swift in Sources */,
+				FACF2E8E2553F2BE0006973C /* TableViewCellSearchGroup.swift in Sources */,
 				FACF2E73254EBF060006973C /* TableViewControllerGroup.swift in Sources */,
 				FA8DC599254430EB0004FC3B /* SceneDelegate.swift in Sources */,
 				FACF2E6A254EA9340006973C /* Group.swift in Sources */,
 				FACF2E67254EA9160006973C /* User.swift in Sources */,
+				FACF2E872553F07E0006973C /* TableViewControllerSearchGroup.swift in Sources */,
 				FACF2E63254EA7490006973C /* TableViewController.swift in Sources */,
 				FACF2E76254EC3360006973C /* TableViewCellGroup.swift in Sources */,
 				FACF2E81254ED1670006973C /* CollectionViewController.swift in Sources */,
