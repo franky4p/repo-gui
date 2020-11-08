@@ -24,6 +24,7 @@
 		FACF2E84254ED1C00006973C /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2E83254ED1C00006973C /* CollectionViewCell.swift */; };
 		FACF2E872553F07E0006973C /* TableViewControllerSearchGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2E862553F07E0006973C /* TableViewControllerSearchGroup.swift */; };
 		FACF2E8E2553F2BE0006973C /* TableViewCellSearchGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2E8D2553F2BE0006973C /* TableViewCellSearchGroup.swift */; };
+		FACF2E91255818070006973C /* ControlLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2E90255818070006973C /* ControlLike.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		FACF2E83254ED1C00006973C /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		FACF2E862553F07E0006973C /* TableViewControllerSearchGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerSearchGroup.swift; sourceTree = "<group>"; };
 		FACF2E8D2553F2BE0006973C /* TableViewCellSearchGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellSearchGroup.swift; sourceTree = "<group>"; };
+		FACF2E90255818070006973C /* ControlLike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlLike.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				FACF2E6C254EB15A0006973C /* Utilities.swift */,
 				FACF2E65254EA8E90006973C /* Model */,
 				FA8DC59A254430EB0004FC3B /* ViewController.swift */,
+				FACF2E90255818070006973C /* ControlLike.swift */,
 				FA8DC59C254430EB0004FC3B /* Main.storyboard */,
 				FA8DC59F254430EB0004FC3B /* Assets.xcassets */,
 				FA8DC5A1254430EB0004FC3B /* LaunchScreen.storyboard */,
@@ -199,6 +202,7 @@
 				FACF2E84254ED1C00006973C /* CollectionViewCell.swift in Sources */,
 				FA8DC597254430EB0004FC3B /* AppDelegate.swift in Sources */,
 				FACF2E6D254EB15A0006973C /* Utilities.swift in Sources */,
+				FACF2E91255818070006973C /* ControlLike.swift in Sources */,
 				FACF2E8E2553F2BE0006973C /* TableViewCellSearchGroup.swift in Sources */,
 				FACF2E73254EBF060006973C /* TableViewControllerGroup.swift in Sources */,
 				FA8DC599254430EB0004FC3B /* SceneDelegate.swift in Sources */,
