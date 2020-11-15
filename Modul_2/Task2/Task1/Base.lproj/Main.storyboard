@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -108,20 +108,20 @@
                         <color key="sectionIndexBackgroundColor" systemColor="systemGreenColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="table21" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell_2_1" id="hTy-bm-G5C" customClass="TableViewCellGroup" customModule="Task1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="42.666667938232422"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hTy-bm-G5C" id="PQ4-fd-naG">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="42.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vTy-IK-jPe">
-                                            <rect key="frame" x="20" y="0.0" width="120" height="42.666666666666664"/>
+                                            <rect key="frame" x="20" y="0.0" width="120" height="43"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="120" id="y1M-Ph-aJr"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YH2-0X-3Ra">
-                                            <rect key="frame" x="145" y="11.000000000000002" width="249" height="20.666666666666671"/>
+                                            <rect key="frame" x="145" y="11" width="249" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -173,20 +173,20 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell_2_2" id="Lmt-ow-QGQ" customClass="TableViewCellSearchGroup" customModule="Task1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.333332061767578"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lmt-ow-QGQ" id="COj-CW-bMm">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.333332061767578"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YMu-d6-PZ7">
-                                            <rect key="frame" x="294" y="0.0" width="100" height="43"/>
+                                            <rect key="frame" x="294" y="0.0" width="100" height="43.333333333333336"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="Pl7-Me-O0r"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vn8-s1-nvh">
-                                            <rect key="frame" x="20" y="11" width="251" height="21"/>
+                                            <rect key="frame" x="20" y="10.999999999999998" width="251" height="21.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -276,34 +276,60 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="table2" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell_1_1" id="ecO-Vo-NYt" customClass="TableViewCell" customModule="Task1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="table2" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell_1_1" rowHeight="66" id="ecO-Vo-NYt" customClass="TableViewCell" customModule="Task1" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ecO-Vo-NYt" id="I0Q-4s-6nZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lU4-Do-enI">
-                                            <rect key="frame" x="20" y="0.0" width="111" height="43.666666666666664"/>
+                                        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="CSG-TG-VMS">
+                                            <rect key="frame" x="20" y="0.0" width="60" height="60"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="lU4-Do-enI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="Eo6-YR-vod"/>
+                                                        <constraint firstAttribute="height" constant="60" id="aE0-9Y-cf5"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="30"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="111" id="oz1-kR-0j5"/>
+                                                <constraint firstItem="lU4-Do-enI" firstAttribute="leading" secondItem="CSG-TG-VMS" secondAttribute="leading" id="KtB-w2-psA"/>
+                                                <constraint firstItem="lU4-Do-enI" firstAttribute="top" secondItem="CSG-TG-VMS" secondAttribute="top" id="Odo-P5-imP"/>
                                             </constraints>
-                                        </imageView>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="30"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beD-uX-0fv">
-                                            <rect key="frame" x="136" y="11.000000000000002" width="258" height="21.666666666666671"/>
+                                            <rect key="frame" x="307.66666666666669" y="11.666666666666668" width="86.333333333333314" height="42.666666666666657"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="lU4-Do-enI" firstAttribute="top" secondItem="I0Q-4s-6nZ" secondAttribute="top" id="7r8-sm-wy3"/>
+                                        <constraint firstItem="CSG-TG-VMS" firstAttribute="top" secondItem="I0Q-4s-6nZ" secondAttribute="top" id="0mQ-G2-5dw"/>
+                                        <constraint firstItem="beD-uX-0fv" firstAttribute="top" secondItem="I0Q-4s-6nZ" secondAttribute="topMargin" constant="0.6666666666666643" id="0zA-bP-YDW"/>
+                                        <constraint firstItem="beD-uX-0fv" firstAttribute="centerY" secondItem="CSG-TG-VMS" secondAttribute="centerY" constant="3" id="Db3-ad-HMw"/>
                                         <constraint firstItem="beD-uX-0fv" firstAttribute="trailing" secondItem="I0Q-4s-6nZ" secondAttribute="trailingMargin" id="KWm-5r-Hgn"/>
-                                        <constraint firstItem="beD-uX-0fv" firstAttribute="leading" secondItem="lU4-Do-enI" secondAttribute="trailing" constant="5" id="MFv-4C-xwQ"/>
-                                        <constraint firstItem="beD-uX-0fv" firstAttribute="top" secondItem="I0Q-4s-6nZ" secondAttribute="topMargin" id="NjB-s5-3LK"/>
-                                        <constraint firstAttribute="bottom" secondItem="lU4-Do-enI" secondAttribute="bottom" id="Swg-hv-1q4"/>
-                                        <constraint firstItem="lU4-Do-enI" firstAttribute="leading" secondItem="I0Q-4s-6nZ" secondAttribute="leadingMargin" id="mY0-tn-LaN"/>
-                                        <constraint firstItem="beD-uX-0fv" firstAttribute="centerY" secondItem="lU4-Do-enI" secondAttribute="centerY" id="mdH-0Q-I7v"/>
+                                        <constraint firstItem="CSG-TG-VMS" firstAttribute="leading" secondItem="I0Q-4s-6nZ" secondAttribute="leadingMargin" id="SpO-u2-Yef"/>
+                                        <constraint firstItem="CSG-TG-VMS" firstAttribute="top" secondItem="I0Q-4s-6nZ" secondAttribute="top" id="cDF-jg-Z4X"/>
+                                        <constraint firstAttribute="bottom" secondItem="CSG-TG-VMS" secondAttribute="bottom" constant="6" id="eVW-GN-hbA"/>
+                                        <constraint firstItem="CSG-TG-VMS" firstAttribute="top" secondItem="I0Q-4s-6nZ" secondAttribute="top" id="hDV-Lv-vQM"/>
+                                        <constraint firstItem="beD-uX-0fv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CSG-TG-VMS" secondAttribute="trailing" constant="8" symbolic="YES" id="n6Z-O5-ctC"/>
+                                        <constraint firstAttribute="trailing" secondItem="CSG-TG-VMS" secondAttribute="trailing" constant="334" id="xnd-BH-QVe"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
