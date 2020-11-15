@@ -58,10 +58,8 @@ class ControlLike: UIControl {
     func updateLikeColor(){
         if isLiked {
             imageHeart.tintColor = UIColor.red
-            print("Поставлен лайк")
         } else {
             imageHeart.tintColor = UIColor.gray
-            print("Лайк забрали")
         }
         
         self.labelLike.text = "\(self.counterLike)"
