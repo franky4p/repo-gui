@@ -12,13 +12,9 @@ private let reuseIdentifier = "myCell"
 class CollectionViewController: UICollectionViewController {
 
     var testUser: User? 
+    let likeButton = ControlLike()
     
     override func viewDidLoad() {
-        //вопрос можно ли отказаться от показа экрана?
-        //так не работает
-        guard testUser != nil else {
-            return
-        }
         
         super.viewDidLoad()
 
@@ -27,6 +23,7 @@ class CollectionViewController: UICollectionViewController {
 
 
         // Do any additional setup after loading the view.
+        
     }
 
     /*
@@ -59,6 +56,8 @@ class CollectionViewController: UICollectionViewController {
             cell.myImage.image = testUser!.avatar
         }
     
+        cell.viewLike.addSubview(likeButton)
+        
         return cell
     }
 
@@ -71,12 +70,21 @@ class CollectionViewController: UICollectionViewController {
     }
     */
 
-    /*
+    
     // Uncomment this method to specify if the specified item should be selected
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        
+        if !self.likeButton.isSelected {
+            self.likeButton.counterLike += 1
+        } else {
+            self.likeButton.counterLike -= 1
+        }
+        
+        self.likeButton.isSelected = !self.likeButton.isSelected
+        
         return true
     }
-    */
+    
 
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
