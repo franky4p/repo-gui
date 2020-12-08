@@ -14,6 +14,8 @@ class CollectionViewController: UICollectionViewController {
     var testUser: User? 
     let likeButton = ControlLike()
     
+    lazy var gestureRecognaizer = UIPanGestureRecognizer(target: self, action: #selector(panGesture))
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -23,7 +25,7 @@ class CollectionViewController: UICollectionViewController {
 
 
         // Do any additional setup after loading the view.
-        
+        self.view.addGestureRecognizer(gestureRecognaizer)
     }
 
     /*
@@ -101,4 +103,14 @@ class CollectionViewController: UICollectionViewController {
     }
     */
 
+    @objc
+    private func panGesture(_ sender: UIPanGestureRecognizer) {
+        let location = sender.location(in: self.view)
+        if location.x > self.view.frame.midX {
+            print("Ya swaipnylsa vpravo")
+        } else {
+            print("Ya swaipnylsa vlevo")
+        }
+    }
+    
 }
