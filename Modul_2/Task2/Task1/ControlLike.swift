@@ -62,6 +62,8 @@ class ControlLike: UIControl {
             imageHeart.tintColor = UIColor.gray
         }
         
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseOut, animations: {self.imageHeart.transform = CGAffineTransform(translationX: 2, y: 2)}, completion: {_ in self.imageHeart.transform = .identity})
+        
         self.labelLike.text = "\(self.counterLike)"
     }
 }
