@@ -14,6 +14,7 @@
 		FA8DC59E254430EB0004FC3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8DC59C254430EB0004FC3B /* Main.storyboard */; };
 		FA8DC5A0254430EB0004FC3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8DC59F254430EB0004FC3B /* Assets.xcassets */; };
 		FA8DC5A3254430EB0004FC3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8DC5A1254430EB0004FC3B /* LaunchScreen.storyboard */; };
+		FAB45EE325891D620062C8C7 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB45EE225891D620062C8C7 /* Session.swift */; };
 		FACF2E63254EA7490006973C /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2E62254EA7490006973C /* TableViewController.swift */; };
 		FACF2E67254EA9160006973C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2E66254EA9160006973C /* User.swift */; };
 		FACF2E6A254EA9340006973C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2E69254EA9340006973C /* Group.swift */; };
@@ -39,6 +40,7 @@
 		FA8DC59F254430EB0004FC3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA8DC5A2254430EB0004FC3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA8DC5A4254430EB0004FC3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAB45EE225891D620062C8C7 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		FACF2E62254EA7490006973C /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		FACF2E66254EA9160006973C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FACF2E69254EA9340006973C /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				FACF2E66254EA9160006973C /* User.swift */,
 				FACF2E69254EA9340006973C /* Group.swift */,
+				FAB45EE225891D620062C8C7 /* Session.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				FACF2E6D254EB15A0006973C /* Utilities.swift in Sources */,
 				FACF2E91255818070006973C /* ControlLike.swift in Sources */,
 				FACF2E8E2553F2BE0006973C /* TableViewCellSearchGroup.swift in Sources */,
+				FAB45EE325891D620062C8C7 /* Session.swift in Sources */,
 				FACF2E73254EBF060006973C /* TableViewControllerGroup.swift in Sources */,
 				FA8DC599254430EB0004FC3B /* SceneDelegate.swift in Sources */,
 				FACF2E6A254EA9340006973C /* Group.swift in Sources */,
