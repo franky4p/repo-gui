@@ -33,6 +33,10 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
         }
     }
     
+    func getListOfFriends() {
+        let requestFriends = RequestVK.requestListFriens()
+        Session.shared.requestToAPI(requestFriends)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +47,9 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
         
         sortUser(data)
         self.tableView.reloadData()
+        
+        getListOfFriends()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -56,6 +63,10 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
             filterContent(for: searchText)
                     
             tableView.reloadData()
+            
+            //request to VK
+//            let requestGroup = RequestVK.requestGroupsSearch(searchText)
+//            Session.shared.requestToAPI(requestGroup)
         }
     }
     

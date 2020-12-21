@@ -6,58 +6,60 @@
 //
 
 import UIKit
+import WebKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WKNavigationDelegate {
 
-    @IBOutlet weak var login: UITextField!
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var wkWebView: WKWebView! {
+        didSet{
+            wkWebView.navigationDelegate = self
+        }
+    }
     
-    let animationView1 = UIView()
-    let animationView2 = UIView()
-    let animationView3 = UIView()
+    func connect() {
+        let request = RequestVK.requestConnectVK()
+        self.wkWebView.load(request)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.addSubview(self.animationView1)
-        self.view.addSubview(self.animationView2)
-        self.view.addSubview(self.animationView3)
+        connect()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.animationView1.frame = CGRect(x: 100, y: 100, width: 20, height: 20)
-        self.animationView1.layer.cornerRadius = 10
-        self.animationView1.backgroundColor = .gray
-        
-        self.animationView2.frame = CGRect(x: 130, y: 100, width: 20, height: 20)
-        self.animationView2.layer.cornerRadius = 10
-        self.animationView2.backgroundColor = .gray
-        
-        self.animationView3.frame = CGRect(x: 160, y: 100, width: 20, height: 20)
-        self.animationView3.layer.cornerRadius = 10
-        self.animationView3.backgroundColor = .gray
-        
-        UIView.animate(withDuration: 0.5, delay: 0.3, options:[.autoreverse, .repeat], animations: {self.animationView1.alpha -= 1})
-        
-        UIView.animate(withDuration: 0.5, delay: 1.2, options:[.autoreverse, .repeat], animations: {self.animationView2.alpha -= 1})
-        
-        UIView.animate(withDuration: 0.5, delay: 2, options:[.autoreverse, .repeat], animations: {self.animationView3.alpha -= 1})
-        
     }
     
-    @IBAction func loginButtonPressed(_ sender: Any) {
-        if login.text == "" && password.text == "" {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vController = storyboard.instantiateViewController(identifier: "homeController")
-            
-            UIApplication.shared.windows.first?.rootViewController = vController
+    func transitionToMain() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vController = storyboard.instantiateViewController(identifier: "homeController")
+        
+        UIApplication.shared.windows.first?.rootViewController = vController
+    }
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+        
+        guard let url = navigationResponse.response.url, url.path == "/blank.html", let fragment = url.fragment  else {
+            decisionHandler(.allow)
+            return
+        }
+        
+        let params = fragment.components(separatedBy: "&")
+            .map { $0.components(separatedBy: "=") }
+            .reduce([String: String]()) { result, param in
+                var dict = result
+                let key = param[0]
+                let value = param[1]
+                dict[key] = value
+                return dict
+            }
+        
+        let token = params["access_token"]
+        decisionHandler(.cancel)
+        if token != nil {
+            Session.shared.token = token
+            transitionToMain()
         }
     }
-    
-   
-    
-    
 }
 
