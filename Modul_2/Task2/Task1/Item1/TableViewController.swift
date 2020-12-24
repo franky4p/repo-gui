@@ -11,18 +11,18 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
     
     let searchController = UISearchController(searchResultsController: nil)
     
-    var users: [[User]] = []
-    let data = createUser()
-    let sections = getSection()
-    var searchResults : [User] = []
+    var users: [[Friend]] = []
+    var data: [Friend] = []
+    var sections: [String] = []
+    var searchResults : [Friend] = []
     
     @IBOutlet var table_1_2: UITableView!
     
     
-    func sortUser(_ items: [User]) {
+    func sortUser(_ items: [Friend]) {
         
         for crct in sections {
-            var tmpItems: [User] = []
+            var tmpItems: [Friend] = []
             
             for item in items {
                 if crct == item.lastName.prefix(1){
@@ -35,20 +35,34 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
     
     func getListOfFriends() {
         let requestFriends = RequestVK.requestListFriens()
-        Session.shared.requestToAPI(requestFriends)
+        Session.shared.requestToAPI(url: requestFriends, typeReceiver: Root<Friend>.self){ results in
+            switch results {
+            case .success(let response):
+                print(response)
+                response.response.items.forEach {
+                 self.data.append($0)
+                }
+                self.sections = arrayFirstCaracterName(self.data)
+                self.sortUser(self.data)
+                
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        getListOfFriends()
+        
         searchController.searchResultsUpdater = self
         self.definesPresentationContext = true
         self.tableView.tableHeaderView = searchController.searchBar
         
-        sortUser(data)
-        self.tableView.reloadData()
         
-        getListOfFriends()
+        //self.tableView.reloadData()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -71,7 +85,7 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
     }
     
     func filterContent(for searchText: String) {
-        searchResults = data.filter({ (user: User) -> Bool in
+        searchResults = data.filter({ (user: Friend) -> Bool in
         let match = user.firstName.range(of: searchText, options: .caseInsensitive)
             return match != nil
             
@@ -95,8 +109,8 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
         let entry = searchController.isActive ? searchResults[indexPath.row] : users[indexPath.section][indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell_1_1", for: indexPath) as! TableViewCell
 
-        cell.labelName.text = "\(entry)"
-        cell.imageUser.image = entry.avatar
+        cell.labelName.text = "\(entry.firstName) \(entry.lastName)"
+        cell.imageUser.setCustomImage(entry.photo)
         
         return cell
     }

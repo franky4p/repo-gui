@@ -16,12 +16,31 @@ final class Session {
     
     private init() {}
     
-    func requestToAPI(_ url: URLRequest) {
+    func requestToAPI<T: Decodable>(url: URLRequest, typeReceiver: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
         let task = self.session.dataTask(with: url) { (data, response, error) in
-            let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
-                print(json ?? "не удалось получить ответ от сервиса")
+            //            let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableLeaves)
+            //            print(json)
+            guard let data = data else { return }
+            
+            if let error = error {
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+                return
             }
-        
+            
+            do {
+                let results = try JSONDecoder().decode(T.self, from: data)
+                DispatchQueue.main.async {
+                    completion(.success(results))
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+                return
+            }
+        }
         task.resume()
     }
 }
@@ -59,7 +78,7 @@ final class RequestVK {
         urlComponents.queryItems = [
             URLQueryItem(name: "access_token", value: Session.shared.token),
             URLQueryItem(name: "v", value: versionVK),
-            URLQueryItem(name: "fields", value: "nickname")
+            URLQueryItem(name: "fields", value: "nickname, photo_100")
         ]
         
         let request = URLRequest(url: urlComponents.url!)
