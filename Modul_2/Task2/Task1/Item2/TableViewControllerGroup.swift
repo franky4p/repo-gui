@@ -31,11 +31,12 @@ class TableViewControllerGroup: UITableViewController {
             results in
             switch results {
             case .success(let response):
-                print(response)
                 response.response.items.forEach {
                  self.data.append($0)
                 }
                 self.tableView.reloadData()
+                
+                Session.shared.saveData(self.data)
             case .failure(let error):
                 print(error.localizedDescription)
             }

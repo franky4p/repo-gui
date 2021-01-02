@@ -38,7 +38,6 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
         Session.shared.requestToAPI(url: requestFriends, typeReceiver: Root<Friend>.self){ results in
             switch results {
             case .success(let response):
-                print(response)
                 response.response.items.forEach {
                  self.data.append($0)
                 }
@@ -46,6 +45,9 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
                 self.sortUser(self.data)
                 
                 self.tableView.reloadData()
+                
+                Session.shared.saveData(self.data)
+                //Session.shared.justForTest(225754593)
             case .failure(let error):
                 print(error.localizedDescription)
             }

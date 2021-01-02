@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import Unrealm
+import RealmSwift
 
 final class Session {
     var token: String?
@@ -15,6 +17,23 @@ final class Session {
     static let shared = Session()
     
     private init() {}
+    
+    func saveData<T: Realmable>(_ data: [T]) {
+        do {
+            let realm = try Realm()
+            realm.beginWrite()
+            realm.add(data, update: true)
+            try realm.commitWrite()
+        } catch {
+            print(error)
+        }
+    }
+    
+    func justForTest(_ pk: Int) {
+        let realm = try! Realm()
+        let savedItem = realm.object(ofType: Friend.self, forPrimaryKey: pk)
+        print(savedItem!.lastName)
+    }
     
     func requestToAPI<T: Decodable>(url: URLRequest, typeReceiver: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
         let task = self.session.dataTask(with: url) { (data, response, error) in
@@ -31,6 +50,7 @@ final class Session {
             
             do {
                 let results = try JSONDecoder().decode(T.self, from: data)
+                
                 DispatchQueue.main.async {
                     completion(.success(results))
                 }

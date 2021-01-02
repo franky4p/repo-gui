@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import UIKit
+import Unrealm
 
 struct Root<T: Decodable> : Decodable {
     private enum CodingKeys : String, CodingKey { case response = "response" }
@@ -22,7 +22,12 @@ struct response<T: Decodable> : Decodable {
     let items : [T]
 }
 
-struct Friend: Decodable {
+struct Friend: Decodable, Realmable {
+    
+    static func primaryKey() -> String? {
+        return "id"
+    }
+    
     private enum CodingKeys : String, CodingKey {
         case firstName = "first_name"
         case id = "id"
@@ -30,15 +35,19 @@ struct Friend: Decodable {
         case nickname = "nickname"
         case photo = "photo_100"
     }
-    let firstName: String
-    let id: Int
-    let lastName: String
+    var firstName: String = ""
+    var id: Int?
+    var lastName: String = ""
     var nickname: String?
-    let photo: String
-    var avatar: UIImage?
+    var photo: String?
 }
 
-struct MyGroup: Decodable {
+struct MyGroup: Decodable, Realmable {
+    
+    static func primaryKey() -> String? {
+        return "id"
+    }
+    
     private enum CodingKeys : String, CodingKey {
         case id = "id"
         case name = "name"
@@ -46,9 +55,8 @@ struct MyGroup: Decodable {
         case screenName = "screen_name"
     }
     
-    let id: Int
-    let name: String
-    let photo: String
-    let screenName: String
-    var avatar: UIImage?
+    var id: Int?
+    var name: String = ""
+    var photo: String?
+    var screenName: String = ""
 }
