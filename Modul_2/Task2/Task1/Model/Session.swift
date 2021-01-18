@@ -35,6 +35,16 @@ final class Session {
         print(savedItem!.lastName)
     }
     
+    func loadData<T>(_ typeReceiver: T.Type) -> [T] where T:Realmable {
+        var data: [T] = [T]()
+        let realm = try! Realm()
+        let savedItem = realm.objects(T.self)
+        savedItem.forEach{el in
+            data.append(el)
+        }
+        return data
+    }
+    
     func requestToAPI<T: Decodable>(url: URLRequest, typeReceiver: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
         let task = self.session.dataTask(with: url) { (data, response, error) in
             //            let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableLeaves)
@@ -153,4 +163,28 @@ final class RequestVK {
         
         return request
     }
+}
+
+func getDateFromServer<T>(typeDate: T.Type, request: URLRequest) where T:Decodable, T:Realmable {
+    Session.shared.requestToAPI(url: request, typeReceiver: Root<T>.self){ results in
+        var data: [T] = [T]()
+        switch results {
+        case .success(let response):
+            response.response.items.forEach {
+             data.append($0)
+            }
+            
+            Session.shared.saveData(data)
+        case .failure(let error):
+            print(error.localizedDescription)
+        }
+    }
+}
+
+func updateFromServer() {
+    let requestFriends = RequestVK.requestListFriens()
+    getDateFromServer(typeDate: Friend.self, request: requestFriends)
+    
+    let requestGroup = RequestVK.requestListGroupsUser()
+    getDateFromServer(typeDate: MyGroup.self, request: requestGroup)
 }

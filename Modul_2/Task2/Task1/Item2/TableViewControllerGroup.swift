@@ -11,12 +11,11 @@ class TableViewControllerGroup: UITableViewController {
 
     @IBOutlet var table_2_2: UITableView!
     
-    //var data = createGroup()
     var data: [MyGroup] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getListGroup()
+        loadGroup()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -25,22 +24,9 @@ class TableViewControllerGroup: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    func getListGroup() {
-        let request = RequestVK.requestListGroupsUser()
-        Session.shared.requestToAPI(url: request, typeReceiver: Root<MyGroup>.self) {
-            results in
-            switch results {
-            case .success(let response):
-                response.response.items.forEach {
-                 self.data.append($0)
-                }
-                self.tableView.reloadData()
-                
-                Session.shared.saveData(self.data)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+    func loadGroup() {
+        self.data = Session.shared.loadData(MyGroup.self)
+        self.tableView.reloadData()
     }
     
     // MARK: - Table view data source

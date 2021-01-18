@@ -58,6 +58,8 @@ class ViewController: UIViewController, WKNavigationDelegate {
         decisionHandler(.cancel)
         if token != nil {
             Session.shared.token = token
+            updateFromServer()
+            
             transitionToMain()
         }
     }

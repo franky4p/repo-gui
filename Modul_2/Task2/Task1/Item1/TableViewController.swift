@@ -33,31 +33,17 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
         }
     }
     
-    func getListOfFriends() {
-        let requestFriends = RequestVK.requestListFriens()
-        Session.shared.requestToAPI(url: requestFriends, typeReceiver: Root<Friend>.self){ results in
-            switch results {
-            case .success(let response):
-                response.response.items.forEach {
-                 self.data.append($0)
-                }
-                self.sections = arrayFirstCaracterName(self.data)
-                self.sortUser(self.data)
-                
-                self.tableView.reloadData()
-                
-                Session.shared.saveData(self.data)
-                //Session.shared.justForTest(225754593)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+    func loadFriends() {
+        self.data = Session.shared.loadData(Friend.self)
+        self.sections = arrayFirstCaracterName(self.data)
+        self.sortUser(self.data)
+        self.tableView.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getListOfFriends()
+        loadFriends()
         
         searchController.searchResultsUpdater = self
         self.definesPresentationContext = true
