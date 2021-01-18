@@ -6,19 +6,7 @@
 //
 
 import Foundation
-
-
-func createUser() -> [User] {
-    let arrayUser = [User(firstName: "Vasya", lastName: "Pypkin", age: 45),
-                     User(firstName: "Katerina", lastName: "Ivanko", age: 35),
-                     User(firstName: "Petya", lastName: "Morozov", age: 12),
-                     User(firstName: "Vladimir", lastName: "Ivanov", age: 33),
-    ]
-    
-    return arrayUser
-    
-}
-
+import UIKit
 
 func createGroup() -> [Group] {
     let arrayGroup = [Group("Swift lessons"),
@@ -29,7 +17,7 @@ func createGroup() -> [Group] {
     return arrayGroup
 }
 
-func arrayFirstCaracterName(_ arrayUser: [User]) -> [String] {
+func arrayFirstCaracterName(_ arrayUser: [Friend]) -> [String] {
     var caracterName = Set <String>()
     arrayUser.forEach() {user in
         let fCar = String(user.lastName.prefix(1))
@@ -39,10 +27,18 @@ func arrayFirstCaracterName(_ arrayUser: [User]) -> [String] {
     return Array(caracterName).sorted()
 }
 
-func getSection() -> [String] {
-    let data = createUser()
-    let section = arrayFirstCaracterName(data)
-    
-    return section
-}
+extension UIImageView {
 
+    func setCustomImage(_ imgURLString: String?) {
+        guard let imageURLString = imgURLString else {
+            self.image = UIImage(named: "icons8-socrates-50")
+            return
+        }
+        DispatchQueue.global().async {
+            let data = try? Data(contentsOf: URL(string: imageURLString)!)
+            DispatchQueue.main.async {
+                self.image = data != nil ? UIImage(data: data!) : UIImage(named: "icons8-socrates-50")
+            }
+        }
+    }
+}

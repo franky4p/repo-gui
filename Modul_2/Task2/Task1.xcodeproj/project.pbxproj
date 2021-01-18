@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		FA25A258258BD87100AA0FB9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA25A257258BD87100AA0FB9 /* WebKit.framework */; };
+		FA25A26225A094D600AA0FB9 /* Unrealm in Frameworks */ = {isa = PBXBuildFile; productRef = FA25A26125A094D600AA0FB9 /* Unrealm */; };
 		FA5F667025657C6D00E7CAD1 /* UITableViewNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F666F25657C6D00E7CAD1 /* UITableViewNews.swift */; };
 		FA8DC597254430EB0004FC3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8DC596254430EB0004FC3B /* AppDelegate.swift */; };
 		FA8DC599254430EB0004FC3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8DC598254430EB0004FC3B /* SceneDelegate.swift */; };
@@ -64,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA25A258258BD87100AA0FB9 /* WebKit.framework in Frameworks */,
+				FA25A26225A094D600AA0FB9 /* Unrealm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +166,9 @@
 			dependencies = (
 			);
 			name = Task1;
+			packageProductDependencies = (
+				FA25A26125A094D600AA0FB9 /* Unrealm */,
+			);
 			productName = Task1;
 			productReference = FA8DC593254430EB0004FC3B /* Task1.app */;
 			productType = "com.apple.product-type.application";
@@ -191,6 +196,9 @@
 				Base,
 			);
 			mainGroup = FA8DC58A254430EB0004FC3B;
+			packageReferences = (
+				FA25A26025A094D600AA0FB9 /* XCRemoteSwiftPackageReference "Unrealm" */,
+			);
 			productRefGroup = FA8DC594254430EB0004FC3B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -437,6 +445,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA25A26025A094D600AA0FB9 /* XCRemoteSwiftPackageReference "Unrealm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/arturdev/Unrealm.git";
+			requirement = {
+				branch = SPM;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA25A26125A094D600AA0FB9 /* Unrealm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA25A26025A094D600AA0FB9 /* XCRemoteSwiftPackageReference "Unrealm" */;
+			productName = Unrealm;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FA8DC58B254430EB0004FC3B /* Project object */;
 }

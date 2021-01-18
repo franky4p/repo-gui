@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import Unrealm
+import RealmSwift
 
 final class Session {
     var token: String?
@@ -16,12 +18,49 @@ final class Session {
     
     private init() {}
     
-    func requestToAPI(_ url: URLRequest) {
+    func saveData<T: Realmable>(_ data: [T]) {
+        do {
+            let realm = try Realm()
+            realm.beginWrite()
+            realm.add(data, update: true)
+            try realm.commitWrite()
+        } catch {
+            print(error)
+        }
+    }
+    
+    func justForTest(_ pk: Int) {
+        let realm = try! Realm()
+        let savedItem = realm.object(ofType: Friend.self, forPrimaryKey: pk)
+        print(savedItem!.lastName)
+    }
+    
+    func requestToAPI<T: Decodable>(url: URLRequest, typeReceiver: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
         let task = self.session.dataTask(with: url) { (data, response, error) in
-            let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
-                print(json ?? "не удалось получить ответ от сервиса")
+            //            let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableLeaves)
+            //            print(json)
+            guard let data = data else { return }
+            
+            if let error = error {
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+                return
             }
-        
+            
+            do {
+                let results = try JSONDecoder().decode(T.self, from: data)
+                
+                DispatchQueue.main.async {
+                    completion(.success(results))
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+                return
+            }
+        }
         task.resume()
     }
 }
@@ -59,7 +98,7 @@ final class RequestVK {
         urlComponents.queryItems = [
             URLQueryItem(name: "access_token", value: Session.shared.token),
             URLQueryItem(name: "v", value: versionVK),
-            URLQueryItem(name: "fields", value: "nickname")
+            URLQueryItem(name: "fields", value: "nickname, photo_100")
         ]
         
         let request = URLRequest(url: urlComponents.url!)

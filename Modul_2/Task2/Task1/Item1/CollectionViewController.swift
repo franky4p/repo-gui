@@ -11,7 +11,7 @@ private let reuseIdentifier = "myCell"
 
 class CollectionViewController: UICollectionViewController {
 
-    var testUser: User? 
+    var testUser: Friend?
     let likeButton = ControlLike()
     
     lazy var gestureRecognaizer = UIPanGestureRecognizer(target: self, action: #selector(panGesture))
@@ -55,7 +55,7 @@ class CollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
     
         if testUser != nil {
-            cell.myImage.image = testUser!.avatar
+            cell.myImage.setCustomImage(testUser!.photo)
         }
     
         cell.viewLike.addSubview(likeButton)
