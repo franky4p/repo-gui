@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import Unrealm
 
 class TableViewControllerGroup: UITableViewController {
 
     @IBOutlet var table_2_2: UITableView!
     
-    var data: [MyGroup] = []
+    var groups: Results<MyGroup>?
+    var token: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +27,22 @@ class TableViewControllerGroup: UITableViewController {
     }
 
     func loadGroup() {
-        self.data = Session.shared.loadData(MyGroup.self)
-        self.tableView.reloadData()
+        groups = Session.shared.loadData(MyGroup.self)
+        token = groups?.observe{ [weak self] (changes) in
+            guard let tableView = self?.tableView else { return }
+            switch changes {
+            case .initial:
+                tableView.reloadData()
+            case .update(_, let deletions, let insertions, let modifications):
+                tableView.beginUpdates()
+                tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
+                tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}), with: .automatic)
+                tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
+                tableView.endUpdates()
+            case .error(let error):
+                fatalError("\(error)")
+            }
+        }
     }
     
     // MARK: - Table view data source
@@ -36,15 +52,14 @@ class TableViewControllerGroup: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.data.count
+        return groups?.count ?? 1
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell_2_1", for: indexPath) as! TableViewCellGroup
 
-        cell.labelName.text = "\(self.data[indexPath.row].name)"
-        cell.imageGroup.setCustomImage(self.data[indexPath.row].photo)
+        cell.labelName.text = "\(groups?[indexPath.row].name ?? "")"
+        cell.imageGroup.setCustomImage(groups?[indexPath.row].photo)
 
         return cell
     }
@@ -55,11 +70,11 @@ class TableViewControllerGroup: UITableViewController {
         return true
     }
     
-    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let editGroup = UITableViewRowAction(style: .normal, title: "Выйти из группы") { [self] action, index in data.remove(at: indexPath.row); tableView.reloadData()}
-        
-        return [editGroup]
-    }
+//    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+//        let editGroup = UITableViewRowAction(style: .normal, title: "Выйти из группы") { [self] action, index in data.remove(at: indexPath.row); tableView.reloadData()}
+//
+//        return [editGroup]
+//    }
 
     /*
     // Override to support editing the table view.

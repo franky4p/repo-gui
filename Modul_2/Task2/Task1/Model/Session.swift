@@ -35,14 +35,10 @@ final class Session {
         print(savedItem!.lastName)
     }
     
-    func loadData<T>(_ typeReceiver: T.Type) -> [T] where T:Realmable {
-        var data: [T] = [T]()
+    func loadData<T>(_ typeReceiver: T.Type) -> Unrealm.Results<T> where T:Realmable {
         let realm = try! Realm()
         let savedItem = realm.objects(T.self)
-        savedItem.forEach{el in
-            data.append(el)
-        }
-        return data
+        return savedItem
     }
     
     func requestToAPI<T: Decodable>(url: URLRequest, typeReceiver: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
