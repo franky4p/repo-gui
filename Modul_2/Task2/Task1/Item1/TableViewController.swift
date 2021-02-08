@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Unrealm
 
 class TableViewController: UITableViewController, UISearchResultsUpdating {
     
@@ -15,6 +16,8 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
     var data: [Friend] = []
     var sections: [String] = []
     var searchResults : [Friend] = []
+    var token: NotificationToken?
+    
     
     @IBOutlet var table_1_2: UITableView!
     
@@ -33,31 +36,37 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
         }
     }
     
-    func getListOfFriends() {
-        let requestFriends = RequestVK.requestListFriens()
-        Session.shared.requestToAPI(url: requestFriends, typeReceiver: Root<Friend>.self){ results in
-            switch results {
-            case .success(let response):
-                response.response.items.forEach {
-                 self.data.append($0)
-                }
-                self.sections = arrayFirstCaracterName(self.data)
-                self.sortUser(self.data)
-                
-                self.tableView.reloadData()
-                
-                Session.shared.saveData(self.data)
-                //Session.shared.justForTest(225754593)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
+    func loadFriends() {
+        let dataRealm = Session.shared.loadData(Friend.self)
+//        token = dataRealm.observe{ [weak self] (changes) in
+//            guard let tableView = self?.tableView else { return }
+//            switch changes {
+//            case .initial:
+//                //tableView.reloadData()
+//            print("init friends")
+//            case .update(_, let deletions, let insertions, let modifications):
+//                tableView.beginUpdates()
+//                tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
+//                tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}), with: .automatic)
+//                tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
+//                tableView.endUpdates()
+//            case .error(let error):
+//                fatalError("\(error)")
+//            }
+//        }
+        
+        dataRealm.forEach{el in
+            data.append(el)
         }
+        self.sections = arrayFirstCaracterName(self.data)
+        self.sortUser(self.data)
+        self.tableView.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getListOfFriends()
+        loadFriends()
         
         searchController.searchResultsUpdater = self
         self.definesPresentationContext = true
