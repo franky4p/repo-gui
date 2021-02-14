@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA112C3D25D9241200AEE59D /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA112C3C25D9241200AEE59D /* AsyncOperation.swift */; };
+		FA112C4025D926DF00AEE59D /* GetDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA112C3F25D926DF00AEE59D /* GetDataOperation.swift */; };
 		FA25A258258BD87100AA0FB9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA25A257258BD87100AA0FB9 /* WebKit.framework */; };
 		FA25A26225A094D600AA0FB9 /* Unrealm in Frameworks */ = {isa = PBXBuildFile; productRef = FA25A26125A094D600AA0FB9 /* Unrealm */; };
 		FA5F667025657C6D00E7CAD1 /* UITableViewNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F666F25657C6D00E7CAD1 /* UITableViewNews.swift */; };
@@ -33,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA112C3C25D9241200AEE59D /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		FA112C3F25D926DF00AEE59D /* GetDataOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDataOperation.swift; sourceTree = "<group>"; };
 		FA25A257258BD87100AA0FB9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		FA5F666F25657C6D00E7CAD1 /* UITableViewNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewNews.swift; sourceTree = "<group>"; };
 		FA8DC593254430EB0004FC3B /* Task1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Task1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +76,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA112C3B25D923DF00AEE59D /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				FA112C3C25D9241200AEE59D /* AsyncOperation.swift */,
+				FA112C3F25D926DF00AEE59D /* GetDataOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
 		FA25A256258BD87100AA0FB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +115,7 @@
 			children = (
 				FA8DC596254430EB0004FC3B /* AppDelegate.swift */,
 				FA8DC598254430EB0004FC3B /* SceneDelegate.swift */,
+				FA112C3B25D923DF00AEE59D /* Operations */,
 				FACF2E8B2553F1040006973C /* Item2 */,
 				FACF2E892553F0CC0006973C /* Item1 */,
 				FACF2E6C254EB15A0006973C /* Utilities.swift */,
@@ -229,6 +243,8 @@
 				FA5F667025657C6D00E7CAD1 /* UITableViewNews.swift in Sources */,
 				FA8DC59B254430EB0004FC3B /* ViewController.swift in Sources */,
 				FACF2E70254EB82F0006973C /* TableViewCell.swift in Sources */,
+				FA112C3D25D9241200AEE59D /* AsyncOperation.swift in Sources */,
+				FA112C4025D926DF00AEE59D /* GetDataOperation.swift in Sources */,
 				FACF2E84254ED1C00006973C /* CollectionViewCell.swift in Sources */,
 				FA8DC597254430EB0004FC3B /* AppDelegate.swift in Sources */,
 				FACF2E6D254EB15A0006973C /* Utilities.swift in Sources */,

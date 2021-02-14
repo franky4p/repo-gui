@@ -178,9 +178,21 @@ func getDateFromServer<T>(typeDate: T.Type, request: URLRequest) where T:Decodab
 }
 
 func updateFromServer() {
+    let opq = OperationQueue()
     let requestFriends = RequestVK.requestListFriens()
-    getDateFromServer(typeDate: Friend.self, request: requestFriends)
-    
     let requestGroup = RequestVK.requestListGroupsUser()
-    getDateFromServer(typeDate: MyGroup.self, request: requestGroup)
+    //    getDateFromServer(typeDate: MyGroup.self, request: requestGroup)
+    //    getDateFromServer(typeDate: Friend.self, request: requestFriends)
+    
+    let opFriend = GetDataOperation(request: requestFriends, typeDate: Friend.self)
+    opFriend.completionBlock = {
+        Session.shared.saveData(opFriend.data)
+    }
+    let opGroup = GetDataOperation(request: requestGroup, typeDate: MyGroup.self)
+    opGroup.completionBlock = {
+        Session.shared.saveData(opGroup.data)
+    }
+    
+    opq.addOperation(opFriend)
+    opq.addOperation(opGroup)
 }
