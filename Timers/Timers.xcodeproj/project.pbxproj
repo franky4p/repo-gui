@@ -1,0 +1,366 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA8BFABA268F42A100045BCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BFAB9268F42A100045BCB /* AppDelegate.swift */; };
+		FA8BFABC268F42A100045BCB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BFABB268F42A100045BCB /* SceneDelegate.swift */; };
+		FA8BFABE268F42A100045BCB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BFABD268F42A100045BCB /* ViewController.swift */; };
+		FA8BFAC3268F42A500045BCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8BFAC2268F42A500045BCB /* Assets.xcassets */; };
+		FA8BFAC6268F42A500045BCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8BFAC4268F42A500045BCB /* LaunchScreen.storyboard */; };
+		FA8BFACE268F486000045BCB /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BFACD268F486000045BCB /* TableViewCell.swift */; };
+		FA8BFAD0268F637F00045BCB /* TextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BFACF268F637F00045BCB /* TextField+.swift */; };
+		FA8BFAD2268F6BC200045BCB /* FactoryUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BFAD1268F6BC200045BCB /* FactoryUI.swift */; };
+		FA8BFAD4268F712F00045BCB /* Button+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BFAD3268F712F00045BCB /* Button+.swift */; };
+		FA8BFAD6269068F500045BCB /* MyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BFAD5269068F500045BCB /* MyTimer.swift */; };
+		FA8BFAD8269085E400045BCB /* ViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BFAD7269085E400045BCB /* ViewController+.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FA8BFAB6268F42A100045BCB /* Timers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timers.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA8BFAB9268F42A100045BCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA8BFABB268F42A100045BCB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FA8BFABD268F42A100045BCB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FA8BFAC2268F42A500045BCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA8BFAC5268F42A500045BCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA8BFAC7268F42A500045BCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA8BFACD268F486000045BCB /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		FA8BFACF268F637F00045BCB /* TextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+.swift"; sourceTree = "<group>"; };
+		FA8BFAD1268F6BC200045BCB /* FactoryUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryUI.swift; sourceTree = "<group>"; };
+		FA8BFAD3268F712F00045BCB /* Button+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+.swift"; sourceTree = "<group>"; };
+		FA8BFAD5269068F500045BCB /* MyTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTimer.swift; sourceTree = "<group>"; };
+		FA8BFAD7269085E400045BCB /* ViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA8BFAB3268F42A100045BCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA8BFAAD268F42A100045BCB = {
+			isa = PBXGroup;
+			children = (
+				FA8BFAB8268F42A100045BCB /* Timers */,
+				FA8BFAB7268F42A100045BCB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA8BFAB7268F42A100045BCB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA8BFAB6268F42A100045BCB /* Timers.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA8BFAB8268F42A100045BCB /* Timers */ = {
+			isa = PBXGroup;
+			children = (
+				FA8BFAB9268F42A100045BCB /* AppDelegate.swift */,
+				FA8BFABB268F42A100045BCB /* SceneDelegate.swift */,
+				FA8BFABD268F42A100045BCB /* ViewController.swift */,
+				FA8BFAD1268F6BC200045BCB /* FactoryUI.swift */,
+				FA8BFACD268F486000045BCB /* TableViewCell.swift */,
+				FA8BFAD926908AEE00045BCB /* Extension */,
+				FA8BFAD5269068F500045BCB /* MyTimer.swift */,
+				FA8BFAC2268F42A500045BCB /* Assets.xcassets */,
+				FA8BFAC4268F42A500045BCB /* LaunchScreen.storyboard */,
+				FA8BFAC7268F42A500045BCB /* Info.plist */,
+			);
+			path = Timers;
+			sourceTree = "<group>";
+		};
+		FA8BFAD926908AEE00045BCB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FA8BFAD3268F712F00045BCB /* Button+.swift */,
+				FA8BFACF268F637F00045BCB /* TextField+.swift */,
+				FA8BFAD7269085E400045BCB /* ViewController+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA8BFAB5268F42A100045BCB /* Timers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA8BFACA268F42A500045BCB /* Build configuration list for PBXNativeTarget "Timers" */;
+			buildPhases = (
+				FA8BFAB2268F42A100045BCB /* Sources */,
+				FA8BFAB3268F42A100045BCB /* Frameworks */,
+				FA8BFAB4268F42A100045BCB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Timers;
+			productName = Timers;
+			productReference = FA8BFAB6268F42A100045BCB /* Timers.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA8BFAAE268F42A100045BCB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					FA8BFAB5268F42A100045BCB = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = FA8BFAB1268F42A100045BCB /* Build configuration list for PBXProject "Timers" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA8BFAAD268F42A100045BCB;
+			productRefGroup = FA8BFAB7268F42A100045BCB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA8BFAB5268F42A100045BCB /* Timers */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA8BFAB4268F42A100045BCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA8BFAC6268F42A500045BCB /* LaunchScreen.storyboard in Resources */,
+				FA8BFAC3268F42A500045BCB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA8BFAB2268F42A100045BCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA8BFABE268F42A100045BCB /* ViewController.swift in Sources */,
+				FA8BFACE268F486000045BCB /* TableViewCell.swift in Sources */,
+				FA8BFAD0268F637F00045BCB /* TextField+.swift in Sources */,
+				FA8BFAD8269085E400045BCB /* ViewController+.swift in Sources */,
+				FA8BFABA268F42A100045BCB /* AppDelegate.swift in Sources */,
+				FA8BFAD2268F6BC200045BCB /* FactoryUI.swift in Sources */,
+				FA8BFABC268F42A100045BCB /* SceneDelegate.swift in Sources */,
+				FA8BFAD4268F712F00045BCB /* Button+.swift in Sources */,
+				FA8BFAD6269068F500045BCB /* MyTimer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FA8BFAC4268F42A500045BCB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA8BFAC5268F42A500045BCB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA8BFAC8268F42A500045BCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FA8BFAC9268F42A500045BCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA8BFACB268F42A500045BCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 39B93ZXWW7;
+				INFOPLIST_FILE = Timers/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Pavel-Khlebnikov.Timers";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA8BFACC268F42A500045BCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 39B93ZXWW7;
+				INFOPLIST_FILE = Timers/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Pavel-Khlebnikov.Timers";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA8BFAB1268F42A100045BCB /* Build configuration list for PBXProject "Timers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA8BFAC8268F42A500045BCB /* Debug */,
+				FA8BFAC9268F42A500045BCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA8BFACA268F42A500045BCB /* Build configuration list for PBXNativeTarget "Timers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA8BFACB268F42A500045BCB /* Debug */,
+				FA8BFACC268F42A500045BCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA8BFAAE268F42A100045BCB /* Project object */;
+}
