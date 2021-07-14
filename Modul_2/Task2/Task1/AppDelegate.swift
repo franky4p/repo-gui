@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Realm.registerRealmables(Friend.self)
         Realm.registerRealmables(MyGroup.self)
+        Realm.registerRealmables(MyNews.self)
         
         return true
     }
