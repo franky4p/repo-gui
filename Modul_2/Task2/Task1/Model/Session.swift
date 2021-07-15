@@ -110,7 +110,7 @@ final class Session {
             Session.shared.saveData(opGroup.data)
         }
         let opNews = GetDataOperation(request: requestNews, typeDate: MyNews.self)
-        opGroup.completionBlock = {
+        opNews.completionBlock = {
             Session.shared.saveData(opNews.data)
         }
         
@@ -131,7 +131,7 @@ final class RequestVK {
         urlComponents.host = "oauth.vk.com"
         urlComponents.path = "/authorize"
         urlComponents.queryItems = [
-            URLQueryItem(name: "client_id", value: "7702628"),
+            URLQueryItem(name: "client_id", value: "client_id"),
             URLQueryItem(name: "display", value: "mobile"),
             URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
             URLQueryItem(name: "scope", value: "friends, wall"),

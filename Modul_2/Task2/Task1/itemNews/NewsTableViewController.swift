@@ -17,7 +17,7 @@ class NewsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.register(NewsTableViewCell.self, forCellReuseIdentifier: "newsId")
         loadNews()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -28,9 +28,8 @@ class NewsTableViewController: UITableViewController {
 
     func loadNews() {
         news = Session.shared.loadData(MyNews.self)
-        print(news)
         token = news?.observe{ [weak self] (changes) in
-            guard let tableView = self?.tableView else { return }
+            guard let tableView = self?.tableNews else { return }
             switch changes {
             case .initial:
                 tableView.reloadData()
@@ -48,21 +47,19 @@ class NewsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return news?.count ?? 1
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsTableViewCell
-
-        cell.author.text = "\(news?[indexPath.row].typeNews ?? "")"
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "newsId", for: indexPath) as! NewsTableViewCell
+        if let currentNews = news?[indexPath.row] {
+            cell.news = currentNews
+        }
         return cell
     }
     
