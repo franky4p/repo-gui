@@ -127,10 +127,6 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        //при такой реализации открывается 2 экрана: 1й я как понимаю "стандартный"
-        //из-за наличия seque с пустым полем test user, второй - тот который пушим с
-        //переданным юзером. Вопрос как отказаться от первого показа экрана?
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vController = storyboard.instantiateViewController(identifier: "details") as! CollectionViewController
         

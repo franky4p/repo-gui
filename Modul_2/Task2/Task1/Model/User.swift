@@ -18,7 +18,7 @@ struct response<T: Decodable> : Decodable {
         case items = "items"
         case count = "count"
     }
-    let count: Int
+    let count: Int?
     let items : [T]
 }
 
