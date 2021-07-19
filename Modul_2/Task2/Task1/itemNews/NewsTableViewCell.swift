@@ -11,13 +11,15 @@ class NewsTableViewCell: UITableViewCell {
     
     var news : MyNews? {
         didSet {
-            //newsImageAuthor.image = news?.image
+            newsImageAuthor.setCustomImage(news?.photoAuthor)
+            authorLabel.text = news?.screenName
+            
             textNewsLabel.text = news?.textNews
+            
             likesLabel.text = "❤︎ \(news?.likes?.countLikes ?? 0)"
-            authorLabel.text = news?.typeNews
-            repostLabel.text = "☞ 228"
-            commentLabel.text = "✉︎ 11"
-            numberOfViewstLabel.text = "❂ 5"
+            repostLabel.text = "☞ \(news?.reposts?.countRepost ?? 0)"
+            commentLabel.text = "✉︎ \(news?.comments?.countComments ?? 0)"
+            numberOfViewstLabel.text = "❂ \(news?.views?.countViews ?? 0)"
         }
     }
     
@@ -74,15 +76,17 @@ class NewsTableViewCell: UITableViewCell {
         let imgView = UIImageView(image: UIImage(named: "icons8-socrates-50"))
         imgView.contentMode = .scaleAspectFit
         imgView.clipsToBounds = true
+        imgView.layer.cornerRadius = 20
+        imgView.autoresizesSubviews = true
         return imgView
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(newsImageAuthor)
-        newsImageAuthor.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 0, width: 90, height: 40, enableInsets: false)
+        newsImageAuthor.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 0, width: 40, height: 40, enableInsets: false)
         addSubview(authorLabel)
-        authorLabel.anchor(top: topAnchor, left: newsImageAuthor.rightAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: frame.size.width / 2, height: 40, enableInsets: false)
+        authorLabel.anchor(top: topAnchor, left: newsImageAuthor.rightAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: frame.size.width, height: 40, enableInsets: false)
         addSubview(textNewsLabel)
         textNewsLabel.anchor(top: authorLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: bounds.size.width, height: 0, enableInsets: false)
         

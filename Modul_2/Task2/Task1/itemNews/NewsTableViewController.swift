@@ -59,6 +59,16 @@ class NewsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsId", for: indexPath) as! NewsTableViewCell
         if let currentNews = news?[indexPath.row] {
             cell.news = currentNews
+            if currentNews.id ?? 0 >= 0 {
+                if let author = Session.shared.getUserFromBase(currentNews.id ?? 0) {
+                    cell.news?.screenName = "\(author.firstName) \(author.lastName)"
+                    cell.news?.photoAuthor = author.photo
+                }
+            } else {
+                if let author = Session.shared.getGroupFromBase(currentNews.id ?? 0 * -1) {
+                    cell.news?.screenName = author.screenName
+                }
+            }
         }
         return cell
     }

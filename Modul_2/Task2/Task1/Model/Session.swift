@@ -29,10 +29,18 @@ final class Session {
         }
     }
     
-    func justForTest(_ pk: Int) {
+    func getUserFromBase(_ pk: Int) -> Friend?{
         let realm = try! Realm()
         let savedItem = realm.object(ofType: Friend.self, forPrimaryKey: pk)
-        print(savedItem!.lastName)
+        
+        return savedItem
+    }
+    
+    func getGroupFromBase(_ pk: Int) -> MyGroup?{
+        let realm = try! Realm()
+        let savedItem = realm.object(ofType: MyGroup.self, forPrimaryKey: pk)
+        
+        return savedItem
     }
     
     func loadData<T>(_ typeReceiver: T.Type) -> Unrealm.Results<T> where T:Realmable {
@@ -53,8 +61,8 @@ final class Session {
             }
             
             do {
-                //                let json = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableLeaves)
-                //                                       print(json)
+//                                let json = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableLeaves)
+//                                                       print(json)
                 let results = try JSONDecoder().decode(T.self, from: data)
                 
                 DispatchQueue.main.async {
@@ -217,7 +225,8 @@ final class RequestVK {
         urlComponents.queryItems = [
             URLQueryItem(name: "access_token", value: Session.shared.token),
             URLQueryItem(name: "v", value: versionVK),
-            URLQueryItem(name: "filters", value: "post, photo")
+            URLQueryItem(name: "filters", value: "post, photo"),
+            URLQueryItem(name: "fields", value: "nickname, photo_100")
         ]
         
         let request = URLRequest(url: urlComponents.url!)
